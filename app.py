@@ -5,7 +5,7 @@ from PIL import Image
 import io
 
 app = Flask(__name__)
-model = tf.keras.models.load_model("model/fashion_image_classifier.h5")
+model = tf.keras.models.load_model("fashion_image_classifier.h5")
 
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
