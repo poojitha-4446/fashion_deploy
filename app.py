@@ -18,9 +18,9 @@ def home():
 def predict():
     try:
         file = request.files["image"]
-        img = Image.open(io.BytesIO(file.read())).convert("L").resize((32, 32))
+        img = Image.open(io.BytesIO(file.read())).convert("L").resize((28, 28))
         img_array = np.array(img) / 255.0
-        img_array = img_array.reshape(1, 32, 32, 1)
+        img_array = img_array.reshape(1, 784)
         prediction = model.predict(img_array, verbose=0)
         predicted_class = class_names[np.argmax(prediction)]
         confidence = float(np.max(prediction) * 100)
